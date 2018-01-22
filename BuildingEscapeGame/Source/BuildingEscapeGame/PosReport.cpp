@@ -1,8 +1,8 @@
 // copyright ismail 2017
 
 #include "BuildingEscapeGame.h"
+#include "Gameframework/Actor.h"
 #include "PosReport.h"
-
 
 // Sets default values for this component's properties
 UPosReport::UPosReport()
@@ -13,6 +13,7 @@ UPosReport::UPosReport()
 	PrimaryComponentTick.bCanEverTick = true;
 
 	// ...
+   
 }
 
 
@@ -20,9 +21,15 @@ UPosReport::UPosReport()
 void UPosReport::BeginPlay()
 {
 	Super::BeginPlay();
-
+    
+    FString ObjectName = GetOwner()->GetName();
+    FString ObjectPos = GetOwner()->GetTransform().GetLocation().ToString();
+    
+    UE_LOG(LogTemp, Warning, TEXT("%s is at %s "), *ObjectName, *ObjectPos);
 	// ...
-	
+    
+    
+    
 }
 
 

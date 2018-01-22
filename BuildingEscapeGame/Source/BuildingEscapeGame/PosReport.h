@@ -3,6 +3,7 @@
 #pragma once
 
 #include "Components/ActorComponent.h"
+#include "Gameframework/Actor.h"
 #include "PosReport.generated.h"
 
 
