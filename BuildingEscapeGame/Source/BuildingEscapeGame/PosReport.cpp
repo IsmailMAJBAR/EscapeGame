@@ -39,5 +39,5 @@ void UPosReport::TickComponent( float DeltaTime, ELevelTick TickType, FActorComp
 	Super::TickComponent( DeltaTime, TickType, ThisTickFunction );
 
 	// ...
-}
 
+}
