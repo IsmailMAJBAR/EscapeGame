@@ -3,6 +3,8 @@
 #pragma once
 
 #include "Components/ActorComponent.h"
+#include "PhysicsEngine/PhysicsHandleComponent.h"
+#include "Components/InputComponent.h"
 #include "Grabber.generated.h"
 
 
@@ -24,4 +26,17 @@ public:
 private:
     //  how far a head of the player we can reach
     float Reach =100.0f;
+    UPhysicsHandleComponent* PhysicsHandle = nullptr ;
+    UInputComponent* InputComponent = nullptr ;
+    //Ray cast and grab what in reach
+    void Grab();
+    // caled when grab key is released
+    void Release();
+    
+    // find attached componnent
+    void FindPhysicsHandelComponant();
+    // set Up attached input component
+    void SetUpMethodComponent();
+    // return hit for first physics body in reach
+    const FHitResult GetFirstPhysicsBodyInReach();
 };
